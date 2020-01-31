@@ -1,0 +1,100 @@
+.staticBanner {
+    position: relative;
+    z-index: 2;
+    padding: 9rem;
+    background: $color-grey-dark;
+
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        z-index: -1;
+        height: 100%;
+        background: image('banner-img.jpg') right center no-repeat;
+        background-size: cover;
+    }
+
+    &__price {
+        position: absolute;
+        right: 9rem;
+        bottom: 9rem;
+
+        span {
+            display: block;
+            font-family: $font-family-secondary;
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 300;
+            text-align: right;
+
+            &.price {
+                font-family: $font-family-tertiary;
+                color: $color-primary;
+            }
+            
+            @media (max-width: $mobile-medium) {
+                padding-top: 2rem;
+                text-align: center;
+            }
+        }
+        @media (max-width: $tablet-small) {
+            position: static;
+        }
+    }
+
+    &__text {
+        width: 50%;
+        color: white;
+
+        h2 {
+            font-size: 5rem;
+            color: white;
+            font-weight: 200;
+        }
+        p {
+            color: #949ea8;
+        }
+
+        @media (max-width: $small-laptop ) {
+            width: 60%;
+
+            h2 { font-size: 4rem; }
+        }
+        @media (max-width: $tablet-small) {
+            width: 80%;
+            p { color: #f0f0f1; }
+        }
+        @media (max-width: $mobile-medium) {
+            width: 100%;
+            text-align: center;
+
+            h2 { font-size: 2.7rem; }
+        }
+    }
+
+    @media (max-width: $small-laptop ) {
+        &:after { opacity: 0.75; }
+    }
+    @media (max-width: $tablet-small) {
+        padding: 5rem;
+
+        &:after {
+            width: 100%;
+            opacity: 0.5;
+        }
+    }
+    
+    @media (max-width: $mobile-medium) {
+        padding: 3rem;
+    }
+}
+
+.innerBanner {
+    position: relative;
+    z-index: 2;
+    background: image('patten.jpg') right no-repeat black;
+    background-size: cover;
+    padding: 8rem 0;
+}

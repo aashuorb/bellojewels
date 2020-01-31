@@ -1,0 +1,172 @@
+.mainContent {
+    position: relative;
+    z-index: 1;
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10rem;
+        left: 0;
+        z-index: -1;
+        width: 100%;
+        // height: calc(100% + 20rem);
+        height: 100%;
+        background: #eae5e3;
+    }
+}
+
+.discoverJewels {
+    padding: 6rem 0;
+
+    .headingBox {
+        padding: 0 3rem;
+
+        @media (max-width: $mobile) {
+            padding: 0;
+            text-align: center;
+            flex-direction: column;
+
+            .btn-custom-style { margin-top: 2rem; }
+        }
+    }
+
+    .jewelsList {
+        padding: 0;
+        margin: 0 -1rem;
+
+        &__item {
+            outline: none;
+            margin: 0 1rem;
+            padding: 0 0 4rem;
+            text-align: center;
+            background: white;
+
+            h4 {
+                margin-bottom: .5rem;
+            }
+            p {
+                margin-bottom: 0;
+            }
+
+            @media (max-width: $mobile-medium) {
+                img { margin: 0 auto; }
+            }
+        }
+    }
+}
+
+.homeProducts {
+    padding: 6rem 0;
+
+    .headingBox {
+        justify-content: space-between;
+
+        @media (max-width: $mobile-medium) {
+            margin-bottom: 3rem;
+            flex-direction: column;
+
+            .customTabNavs { margin-top: 4rem; }
+        }
+    }
+
+    .productList {
+        display: flex;
+        flex-wrap: wrap;
+        // width: 100% !important;
+        align-items: flex-start;
+
+        &__card {
+            position: relative;
+            z-index: 1;
+            width: 24%;
+            outline: none;
+            margin: 0 0.5%;
+            // min-width: 28rem;
+            padding: 0 0 4rem;
+            text-align: center;
+            background: white;
+            margin-bottom: 1.5rem;
+
+            figure {
+                margin: 0;
+                overflow: hidden;
+                max-height: 32rem;
+
+                img {
+                    @media (max-width: $mobile-medium) {
+                        margin: 0 auto;
+                    }
+                }
+                @media (max-width: $mobile-medium) {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            h4 {
+                margin-bottom: .5rem;
+            }
+            p {
+                margin-bottom: 0;
+            }
+
+            .tags {
+                position: absolute;
+                top: 2rem;
+                left: 0;
+                z-index: 10;
+                // font-family: $font-family-tertiary;
+                font-size: 1.2rem;
+                color: white;
+                padding: .6rem 3rem .6rem 2rem;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                min-width: 9rem;
+                background: image('tag.png') left top no-repeat;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    border: 1.5rem solid transparent;
+                    // border-right-color: white;
+                }
+            }
+
+            &.full {
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                figure {
+                    opacity: 0;
+                }
+            }
+
+            &.double {
+                width: 49%;
+
+                h4, p { color: white; }
+
+                @media (max-width: $tablet-small) {
+                    width: 65%;
+                }
+                @media (max-width: $tablet-small) {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: $tablet-small) {
+                width: 32%;
+                margin: 0 0.6% 1.5rem;
+            }
+            @media (max-width: $tablet-small) {
+                width: 49%;
+                margin: 0 0.5% 1.5rem;
+            }
+            @media (max-width: $mobile-medium) {
+                width: 100%;
+                margin: 0 0 1.5rem;
+            }
+        }
+    }
+}
